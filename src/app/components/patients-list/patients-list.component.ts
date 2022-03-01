@@ -8,6 +8,7 @@ import { HttpService } from 'src/app/services/http.service';
 })
 export class PatientsListComponent implements OnInit {
   public patientsList = [];
+  public currentPatientId = 0;
 
   constructor(
     private http: HttpService
