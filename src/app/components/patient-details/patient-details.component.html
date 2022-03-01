@@ -1,0 +1,28 @@
+<div class="content-card" *ngIf="patientDetails; else message">
+    <h5> Details</h5>
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>{{patientDetails.patientId}}</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td> {{patientDetails.firstName}} {{patientDetails.lastName}}</td>
+        </tr>
+        <tr>
+            <td>Date of Birth</td>
+            <td>{{patientDetails.dateOfBirth | date: 'dd/MM/yyy'}}</td>
+        </tr>
+        <tr>
+            <td>Is Active</td>
+            <td>{{patientDetails.isActive}}</td>
+        </tr>
+        <tr>
+            <td>Status</td>
+            <td>{{patientDetails.status}}</td>
+        </tr>
+    </table>
+</div>
+<ng-template #message>
+    <small>Click on view in the above section to see the complete patient details</small>
+</ng-template>

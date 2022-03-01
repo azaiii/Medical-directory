@@ -1,1 +1,118 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: sans-serif;
+}
+
+.card-container {
+  max-width: 60%;
+  margin: auto;
+  margin-top: 100px;
+}
+
+.header {
+  height: 25px;
+  background-color: #9dacb9;
+  border-radius: 4px 4px 0px 0px;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+div.table-container {
+
+  border-left: 3px solid #ebeff2;
+  border-right: 3px solid #ebeff2;
+  border-bottom: 3px solid #ebeff2;
+  width: 50%;
+  margin: 50px auto;
+
+  table {
+    border: #eceff2 !important;
+    font-size: 14px;
+
+    th {
+      color: #615a5a;
+    }
+
+    th,
+    td {
+      padding-left: 8px;
+    }
+
+    th.sno,
+    td.sno,
+    th.btn,
+    td.btn {
+      width: 125px;
+    }
+
+    th.patient-name,
+    td.patient-name {
+      width: 250px;
+    }
+
+    button {
+      font-size: 14px;
+      padding: 4px 8px;
+      background-color: #6457f4;
+      cursor: pointer;
+    }
+
+  }
+
+  tbody {
+    display: block;
+    overflow: auto;
+    height: 250px;
+    width: 100%;
+    font-weight: 400;
+    color: #4a545d;
+  }
+
+  thead tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  thead,
+  tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  thead {
+    width: calc(100% - 1em)
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .details-card {
+    margin-top: 50px;
+    border-top: 2px solid #abaeb1;
+    padding: 20px;
+
+    table {
+      font-size: 14px;
+      font-weight: 400;
+      color: #5d6871;
+
+      td {
+        padding: 10px;
+      }
+
+      td:first-child {
+        font-size: 12px;
+      }
+
+      td:last-child {
+        // font-weight: 500;
+        color: #4a545d
+      }
+    }
+  }
+
+}

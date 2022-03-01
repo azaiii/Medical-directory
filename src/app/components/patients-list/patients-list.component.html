@@ -1,0 +1,31 @@
+<div class="table-container">
+  <div class="header"></div>
+  <div class="card-content">
+    <table class="" border="1">
+      <thead>
+        <tr>
+          <th scope="col" class="sno">Id</th>
+          <th scope="col" class="patient-name">Name</th>
+          <th scope="col">Status</th>
+          <th scope="col">Is Active</th>
+          <th scope="col" class="sno"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let patient of patientsList">
+          <td scope="row" class="sno">{{ patient.patientId }}</td>
+          <td class="patient-name">
+            {{ patient.firstName }}&nbsp;{{ patient.lastName }}
+          </td>
+          <td>{{ patient.status }}</td>
+          <td>{{ patient.isActive }}</td>
+          <td class="text-center sno"><button class="btn btn-primary"
+              (click)="currentPatientId = patient.patientId">View</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="details-card">
+    <app-patient-details [patientId]="currentPatientId"></app-patient-details>
+  </div>
+</div>
