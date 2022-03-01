@@ -1,6 +1,9 @@
 <div class="table-container">
   <div class="header"></div>
   <div class="card-content">
+    <div class="search-container">
+      <span> <label>Search</label> &nbsp;&nbsp;<input type="text" placeholder="Search" [(ngModel)]="searchPatient" (ngModelChange)="filterPatients(searchPatient)" [ngModelOptions]="{standalone: true}"></span>
+    </div>
     <table class="" border="1">
       <thead>
         <tr>

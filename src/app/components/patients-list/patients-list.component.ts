@@ -8,7 +8,9 @@ import { HttpService } from 'src/app/services/http.service';
 })
 export class PatientsListComponent implements OnInit {
   public patientsList = [];
+  public patientsListCopy = [];
   public currentPatientId = 0;
+  public searchPatient = '';
 
   constructor(
     private http: HttpService
@@ -24,11 +26,23 @@ export class PatientsListComponent implements OnInit {
     this.http.get(URL).subscribe((data: Array<any>) => {
       if (data.length > 0) {
         this.patientsList = data;
+        this.patientsListCopy = [...data];
       }
     }, err => {
       console.log(err);
     })
 
+  }
+
+  filterPatients(data: string = '') {
+    const searchQuery = this.searchPatient.toLowerCase();
+    this.patientsList = this.patientsListCopy.filter(patient => {
+      const firstName = patient.firstName.toLowerCase();
+      const lastName = patient.lastName.toLowerCase();
+      if (firstName.includes(searchQuery) || lastName.includes(searchQuery)) {
+        return true
+      }
+    })
   }
 
 }
